@@ -1,0 +1,19 @@
+pip install numpy 
+
+
+import numpy 
+
+import numpy as np 
+
+
+
+array() 
+dtype - attribute
+dtype - parameter 
+
+array([])
+array([[],[],[]])
+
+array([],dtype=) 
+
+itemsize 
