@@ -38,3 +38,61 @@
 1)Display first 5 students.
 2)Display last 3 students.
 3)Display only names.
+4)Display only marks.
+5)Display students whose age >21.
+6)Display female students.
+7)Display students between age 20–21.
+
+
+8)Average marks of each subject.
+9)Highest marks in every subject.
+10)Lowest marks in every subject.
+11)Overall class average.
+12)Highest scorer in Math.
+13)Lowest scorer in Physics.
+14)Total marks of every student.
+15)Percentage of every student.
+16)Standard deviation of every subject.
+
+
+17) Students scoring above 90 in Math.
+18) Students scoring below 60 in any subject.
+19) Students who passed all subjects (≥35).
+20) Students having average above 85.
+21) Students having Physics > Math.
+
+
+22) Sort students by Math marks.
+23) Sort by total marks.
+24) Top 5 students.
+
+
+25) Find student ID 108.
+26) Find student named Emma.
+27) Find students aged 22.
+
+
+28) Add 5 grace marks in English.
+29) Replace all marks below 35 with 35.
+30) Increase Computer marks by 10%.
+31) Give bonus 2 marks to everyone.
+
+32) Use np.where() to identify failed students.
+33) Count students above 80 in each subject.
+34) Create grade array (A/B/C/D/F).
+    90+  -> A
+    80-89 -> B
+    70-79 -> C
+    60-69 -> D
+    <60 -> F
+
+35)Find rank of every student based on total marks.
+36) Create a result sheet containing:
+    ID
+    Name
+    Total
+    Percentage
+    Grade
+    Rank
+
+    
