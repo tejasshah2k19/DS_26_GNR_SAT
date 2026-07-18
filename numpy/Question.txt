@@ -1,0 +1,6 @@
+1) you have weather of 30 days , you need to find highest and lowest temp from it. 
+2) Create Vector Array of 50 with random numbers and find out largest 3 and smallest 3 values.
+
+
+
+ 
