@@ -1,0 +1,85 @@
+Dataset
+InvoiceID
+CustomerID
+Gender
+Age
+City
+Product
+Quantity
+UnitPrice
+Discount
+Tax
+TotalAmount
+PaymentMode
+Rating
+PurchaseDate
+
+Example
+
+1001,C101,Male,25,Ahmedabad,Laptop,2,55000,5000,18,123900,Card,4.5,2026-01-05
+1002,C102,Female,32,Surat,Mouse,5,800,100,18,4130,Cash,4.2,2026-01-06
+
+
+...
+
+
+*****Tasks****
+1 Data Loading
+2 Load CSV into NumPy.
+3 Separate numeric and string columns.
+4 Find dataset shape.
+5 Find total records.
+6 Find missing values.
+
+****Statistics****
+1 Total sales.
+2 Average bill amount.
+3 Highest bill.
+4 Lowest bill.
+5 Median bill.
+
+Filtering
+1 Customers older than 40. 
+2 Female customers.
+3 Purchases above 100000.
+4 Card payments.
+5 Cash payments.
+6 Laptop buyers.
+7 Discount greater than 20%.
+8 Rating above 4.5.
+
+Searching
+1 Customer ID C120.
+2 Invoice 1050.
+3 Product Laptop.
+4 City Ahmedabad.
+5 Rating exactly 5.
+
+Sorting
+1 Highest bill.
+2 Lowest bill.
+3 Sort by quantity.
+4 Sort by rating.
+5 Sort by customer age.
+
+Analytics
+1 City-wise average sale.
+2 Product-wise average quantity.
+3 Payment mode count.
+4 Highest-selling product.
+5 Lowest-selling product.
+6 Tax collected.
+7 Average discount.
+
+Modification
+1 Increase price by 5%.
+2 Replace missing rating.
+3 Apply additional 10% discount.
+4 Generate new total amount.
+
+Final Report
+1 Top 10 customers.
+2 Top-selling products.
+3 Highest revenue city.
+4 Save report.
+5 Generate summary array.

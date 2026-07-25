@@ -1,0 +1,322 @@
+101,John,Male,21,78,85,69,90,88
+102,Emma,Female,20,92,89,95,91,87
+103,Liam,Male,22,65,70,68,72,75
+104,Olivia,Female,21,88,84,79,85,90
+105,Noah,Male,20,55,60,58,62,57
+106,Ava,Female,22,96,94,98,97,95
+107,James,Male,21,80,77,82,79,81
+108,Sophia,Female,20,73,75,70,74,72
+109,Lucas,Male,23,91,89,93,90,92
+110,Isabella,Female,21,67,65,69,70,68
+111,Ethan,Male,22,84,81,79,83,85
+112,Mia,Female,20,76,78,80,82,79
+113,Benjamin,Male,21,59,63,61,60,58
+114,Charlotte,Female,22,87,90,85,88,86
+115,Henry,Male,20,72,74,71,73,75
+116,Amelia,Female,21,94,96,93,95,97
+117,Alexander,Male,22,81,83,80,82,84
+118,Evelyn,Female,20,66,68,65,67,69
+119,Michael,Male,23,89,91,88,90,92
+120,Harper,Female,21,77,79,76,78,80
+
+------------------------
+| Column | Description |
+| ------ | ----------- |
+| 1      | Student ID  |
+| 2      | Name        |
+| 3      | Gender      |
+| 4      | Age         |
+| 5      | Math        |
+| 6      | Science     |
+| 7      | English     |
+| 8      | Computer    |
+| 9      | Physics     |
+------------------------
+
+
+
+
+Load Dataset
+
+import numpy as np
+
+data = np.genfromtxt(
+    "students.csv",
+    delimiter=",",
+    dtype=str
+)
+
+print(data)
+
+
+Convert Marks into Integer Array
+marks = data[:,4:].astype(int)
+
+print("Complete Dataset") 
+print(data)
+
+
+
+1)Display first 5 students.
+print("\nTask 1: First 5 Students") print(data[:5])
+
+
+2)Display last 3 students.
+print(data[-3:])
+
+
+3)Display only names.
+print(data[:, 1])
+
+4)Display only marks.
+print(marks)
+
+#maths marks display => print(marks[:, 0])
+
+
+5)Display students whose age >21.
+age = data[:, 3].astype(int) 
+print(data[age > 21])
+
+6)Display female students.
+print("\nTask 8: Female Students")
+print(data[data[:, 2] == "Female"])
+
+7)Display students between age 20–21.
+print(data[(age >= 20) & (age <= 21)])
+
+
+NumPy Concepts Used in above questions 
+genfromtxt()
+Array slicing (:, :5, -3:)
+Column selection ([:, 1])
+Type conversion (astype(int))
+Boolean filtering
+Logical operators (&)
+Indexing with Boolean masks
+
+
+
+
+# Subject Names 
+subjects = ["Math", "Science", "English", "Computer", "Physics"]
+
+
+8)Average marks of each subject.
+avg_subject = np.mean(marks, axis=0)
+
+
+9)Highest marks in every subject.
+highest = np.max(marks, axis=0) 
+
+for sub, high in zip(subjects, highest): 
+    print(f"{sub:10} : {high}")
+
+10)Lowest marks in every subject.
+lowest = np.min(marks, axis=0)
+for sub, low in zip(subjects, lowest): 
+    print(f"{sub:10} : {low}")
+
+
+11)Overall class average.
+overall_avg = np.mean(marks)
+print("Overall Average :", round(overall_avg, 2))
+
+
+12)Highest scorer in Math.
+math_index = np.argmax(marks[:, 0])
+print("Student ID :", data[math_index, 0])
+print("Name :", data[math_index, 1])
+print("Math Marks :", marks[math_index, 0])
+
+
+13)Lowest scorer in Physics.
+physics_index = np.argmin(marks[:, 4])
+print("Student ID :", data[physics_index, 0])
+print("Name :", data[physics_index, 1])
+print("Physics Marks :", marks[physics_index, 4])
+
+14)Total marks of every student.
+student_total = np.sum(marks, axis=1)
+for name, total in zip(data[:, 1], student_total): 
+    print(f"{name:12} : {total}")
+
+15)Percentage of every student.
+percentage = (student_total / 500) * 100 
+for name, per in zip(data[:, 1], percentage): 
+    print(f"{name:12} : {per:.2f}%")
+
+
+16)Standard deviation of every subject.
+std = np.std(marks, axis=0)
+
+for sub, value in zip(subjects, std):
+    print(f"{sub:10} : {value:.2f}")
+
+Function	Purpose
+np.mean()	Calculate average
+np.max()	Find highest value
+np.min()	Find lowest value
+np.sum()	Calculate total
+np.argmax()	Index of maximum value
+np.argmin()	Index of minimum value
+np.std()	Standard deviation
+axis=0	Perform operation column-wise (subjects)
+axis=1	Perform operation row-wise (students)
+
+
+
+17) Students scoring above 90 in Math.
+result = data[marks[:, 0] > 90]
+
+18) Students scoring below 60 in any subject.
+result = data[np.any(marks < 60, axis=1)] print(result)
+
+
+19) Students who passed all subjects (≥35).
+result = data[np.all(marks >= 35, axis=1)]
+print(result)
+
+20) Students having average above 85.
+average = np.mean(marks, axis=1)
+result = data[average > 85]
+print(result)
+
+21) Students having Physics > Math.
+result = data[marks[:, 4] > marks[:, 0]]
+print(result)
+
+
+
+
+
+
+----------------------------------------------
+
+
+22) Sort students by Math marks.
+math_index = np.argsort(marks[:, 0])
+print(data[math_index])
+
+23) Sort by total marks.
+total = np.sum(marks, axis=1)
+total_index = np.argsort(total)[::-1]
+print(data[total_index])
+
+24) Top 5 students.
+print(data[total_index][:5])
+#bottom 5
+print(data[total_index][-5:])
+
+#sort student by age 
+age = data[:, 3].astype(int) 
+age_index = np.argsort(age)
+print(data[age_index])
+
+
+----------------------------------------------
+
+
+25) Find student ID 108.
+result = data[data[:, 0] == "108"]
+print(result)
+
+
+26) Find student named Emma.
+result = data[data[:, 1] == "Emma"] 
+print(result)
+
+27) Find students aged 22.
+age = data[:, 3].astype(int)
+result = data[age == 22]
+print(result)
+
+##
+print("\nExtra : Locations of Marks Below 60")
+locations = np.argwhere(marks < 60)
+print(locations)
+##
+--------------------------------------------------
+
+
+
+28) Add 5 grace marks in English.
+english_marks = marks.copy() 
+english_marks[:, 2] += 5 
+print(english_marks)
+
+29) Replace all marks below 35 with 35.
+updated_marks = marks.copy() 
+updated_marks[updated_marks < 35] = 35
+print(updated_marks)
+
+30) Increase Computer marks by 10%.
+computer_marks = marks.copy() 
+computer_marks[:, 3] = np.round( computer_marks[:, 3] * 1.10 ).astype(int)
+print(computer_marks)
+
+31) Give bonus 2 marks to everyone.
+bonus_marks = marks.copy()
+bonus_marks += 2
+print(bonus_marks)
+---------------------------------------------------------
+
+
+32) Use np.where() to identify failed students.
+failed = np.any(marks < 35, axis=1)
+print(data[failed])
+
+
+33) Count students above 80 in each subject.
+subjects = ["Math","Science","English","Computer","Physics"] 
+count = np.sum(marks > 80, axis=0)
+for sub, c in zip(subjects, count): 
+    print(f"{sub:10} : {c}")
+
+34) Create grade array (A/B/C/D/F).
+    90+  -> A
+    80-89 -> B
+    70-79 -> C
+    60-69 -> D
+    <60 -> F
+percentage = (np.sum(marks, axis=1) / 500) * 100 
+grades = np.empty(len(percentage), dtype='<U2') 
+grades[percentage >= 90] = "A" 
+grades[(percentage >= 80) & (percentage < 90)] = "B" 
+grades[(percentage >= 70) & (percentage < 80)] = "C" 
+grades[(percentage >= 60) & (percentage < 70)] = "D" 
+grades[percentage < 60] = "F" 
+for name, grade in zip(data[:,1], grades): 
+    print(f"{name:12} : {grade}")
+
+
+35)Find rank of every student based on total marks.
+total = np.sum(marks, axis=1)
+rank = np.argsort(np.argsort(-total)) + 1 
+for name, r in zip(data[:,1], rank):
+    print(f"{name:12} Rank : {r}")
+
+36) Create a result sheet containing:
+    ID
+    Name
+    Total
+    Percentage
+    Grade
+    Rank
+
+
+result = np.column_stack(( data[:,0], data[:,1], total, np.round(percentage,2), grades, rank ))
+print(result)
+
+
+#extra save result sheet 
+np.savetxt(
+    "result.csv",
+    result,
+    delimiter=",",
+    fmt="%s",
+    header="ID,Name,Total,Percentage,Grade,Rank",
+    comments=""
+)
+print("\nResult sheet saved successfully.")
+---------------------------------------------------------------------------------------------
