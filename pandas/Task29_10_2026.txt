@@ -1,0 +1,111 @@
+
+data = {
+    "Name": ["Amit", "Neha", "Raj", "Priya", "Karan",
+             "Meera", "Jay", "Riya", "Dev", "Anu"],
+    "Age": [22, 25, 21, 24, 26, 23, 22, 27, 25, 24],
+    "City": ["Ahmedabad", "Surat", "Rajkot", "Ahmedabad",
+             "Vadodara", "Surat", "Rajkot", "Ahmedabad",
+             "Surat", "Vadodara"],
+    "Salary": [30000, 45000, 28000, 50000, 55000,
+               38000, 32000, 60000, 48000, 42000],
+    "Marks": [85, 92, 76, 95, 88, 81, 79, 98, 90, 86],
+    "Experience": [1, 3, 0, 4, 5, 2, 1, 6, 3, 2]
+}
+
+df = pd.DataFrame(
+    data,
+    index=["E101", "E102", "E103", "E104", "E105",
+           "E106", "E107", "E108", "E109", "E110"]
+)
+ 
+
+Questions : 
+A. head() and tail()
+1. Display the first 5 rows of the DataFrame.
+
+2. Display the first 3 rows.
+
+3. Display the last 4 rows.
+
+4. Display the last 2 rows.
+
+5. Display the first 7 rows using head().
+
+
+
+B. shape, columns and index
+6. Find the total number of rows and columns.
+
+7. Display all column names.
+
+8. Display all custom index labels.
+
+9. Print only the number of rows.
+
+10. Print only the number of columns.
+
+11. Find the total number of cells in the DataFrame.
+
+
+
+C. dtypes, info() and memory_usage()
+12. Display the data type of every column.
+
+13. Display the complete DataFrame information.
+
+14. Find the memory usage of each column.
+
+15. Find the total memory usage of all columns, including index memory.
+
+16. Which columns contain text data?
+
+17. Which columns contain integer data?
+
+
+
+D. describe()
+18. Display descriptive statistics for numerical columns.
+
+19. Find the average salary.
+
+20. Find the minimum and maximum marks.
+
+21. Find the 25th, 50th and 75th percentiles of salary.
+
+22. Display descriptive statistics for all columns, including text columns.
+
+
+
+E. loc[] — label-based selection
+23. Display the row with index label E103.
+
+24. Display the Name of employee E105.
+
+25. Display the Salary of employee E108.
+
+26. Display rows E102 through E106, inclusive.
+
+27. Display Name and Marks for E101, E104 and E109.
+
+28. Display Age and Salary for employees E103 through E107.
+
+29. Change the Salary of E102 to 47000 using loc[].
+
+
+
+F. iloc[] — position-based selection
+30. Display the first row by position.
+
+31. Display the last row by position.
+
+32. Display the first 3 rows.
+
+33. Display rows at positions 2 through 5, excluding position 5.
+
+34. Display the Name in the fourth row.
+
+35. Display the Salary in the eighth row.
+
+36. Display the first 5 rows and first 3 columns.
+
+37. Display the last 3 rows and last 2 columns.
