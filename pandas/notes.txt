@@ -5,3 +5,103 @@ pip install pandas
 
 import pandas as pd 
 
+
+
+
+------------------------------------
+
+series 
+dataframe 
+
+
+
+row * cols 
+
+dataframe ==> 
+
+name    age     salary 
+a       25      18000
+b       30      20000
+
+
+data =[
+        [a,b],
+        [25,30],
+        [18000,2000]
+]
+
+
+
+ 
+
+data = {
+    "Name": ["Rahul", "Priya", "Amit", "Neha", "Raj"],
+    "Age": [25, 28, 22, 30, 26],
+    "Salary": [30000, 45000, 25000, 50000, 35000],
+    "City": ["Ahmedabad", "Mumbai", "Delhi", "Pune", "Ahmedabad"]
+}
+
+
+1) print total number of rows and cols 
+2) print all column names 
+3) print name and city of all users 
+    df['name']  or df.name 
+    df[ ['name,'city'] ]
+4) add bonus column , bonus is 10% of the salary 
+    df['bonus']  = df['salary'] * 0.10 
+5) year end is coming , give increment in salary by 15% 
+    df['salary'] = df['salary'] * 0.15 
+6) Name = name , Age : age , Salary = salary , City = city 
+    df.rename(
+        {
+            "Name":"name",
+            "Age":"age"
+        },inPlace=True 
+    )
+7) drop bonus column. 
+    axis = 0 : row 
+    axis = 1 : col 
+    df.drop('bonus',axis=1,inplace=True)
+
+
+
+--------------------------------------------------------------------------------------
+
+
+numpy --> numerical operations 
+
+name,maths,sci,eng,perc,grade 
+str,int,int,int,float,char 
+
+
+pandas --> tabular data 
+
+pip install pandas 
+
+import numpy as np 
+import pandas as pd 
+
+
+
+1) series --> 1D labeled data 
+2) dataframe --> 2D -> tabular data 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
