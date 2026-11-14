@@ -89,6 +89,10 @@ import pandas as pd
 
 
 
+idxmin()
+
+
+
 
 
 

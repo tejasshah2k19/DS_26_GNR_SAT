@@ -41,6 +41,7 @@ B. shape, columns and index
 8. Display all custom index labels.
 
 9. Print only the number of rows.
+(4,5) => 0 => 4  1=>5 
 
 10. Print only the number of columns.
 
@@ -67,38 +68,65 @@ D. describe()
 18. Display descriptive statistics for numerical columns.
 
 19. Find the average salary.
+    df["salary"].mean()
 
 20. Find the minimum and maximum marks.
+    df["marks"].min() 
+    df["marks"].max()
+
 
 21. Find the 25th, 50th and 75th percentiles of salary.
+    df["salary"].quantile([0.25,0.50,0.75])
+
 
 22. Display descriptive statistics for all columns, including text columns.
-
+    df.describe(include="all")
 
 
 E. loc[] — label-based selection
 23. Display the row with index label E103.
+    df.loc["E103"]
+
+    Name : X 
+    Age : 
+    Salary : 
+    Marks : 
 
 24. Display the Name of employee E105.
+    df.loc["E105","Name"]
 
 25. Display the Salary of employee E108.
+    df.loc["E108","Salary"]
+
 
 26. Display rows E102 through E106, inclusive.
+    df.loc["E102":"E106"]
+
 
 27. Display Name and Marks for E101, E104 and E109.
+    df.loc[["E101","E104","E109"], ["Name","Marks"]]
 
 28. Display Age and Salary for employees E103 through E107.
 
-29. Change the Salary of E102 to 47000 using loc[].
 
+29. Change the Salary of E102 to 47000 using loc[].
+    df.loc["E102","Salary"] = 47000 
+
+    does above assignment modify original df? 
+    yes its modified in df 
 
 
 F. iloc[] — position-based selection
 30. Display the first row by position.
+    df.iloc[0]
 
 31. Display the last row by position.
+    df.iloc[-1]
+    
 
 32. Display the first 3 rows.
+    df.iloc[0:3] 0 1 2 
+
 
 33. Display rows at positions 2 through 5, excluding position 5.
 
@@ -109,3 +137,7 @@ F. iloc[] — position-based selection
 36. Display the first 5 rows and first 3 columns.
 
 37. Display the last 3 rows and last 2 columns.
+
+
+
+
